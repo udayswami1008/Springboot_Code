@@ -1,17 +1,18 @@
 package com.nt.main;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
-import com.nt.sbeans.wishmeassagegenrator;
-public class DependencyInjection 
-{
+import com.nt.sbean.currentseasonefinder ;
+
+public class Dependancyinjection2 {
+
 	public static void main(String[] args) {
 		FileSystemXmlApplicationContext ctx= 
 				new FileSystemXmlApplicationContext("src/com/nt/cfgs/ApplicationContext.xml");
-		wishmeassagegenrator genrator= ctx.getBean("wmg",wishmeassagegenrator.class);
-		 
-		String result=genrator.showWishmeassage("Raj");
-		System.out.println("Reasult ::"+result);
+		currentseasonefinder genrator= ctx.getBean("wmg",currentseasonefinder.class);
+		
+		String result =genrator.showseassion();
+		System.out.println(result);
+		
 		ctx.close();
-
 	}
-
 }
+		
